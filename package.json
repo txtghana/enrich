@@ -1,0 +1,46 @@
+{
+  "name": "@txtghana/enrich",
+  "version": "1.0.0",
+  "description": "Get user phone number and netwok sent via txtghana header enrichment engine",
+  "main": "dist/enrich.js",
+  "scripts": {
+    "build:browser": "webpack && cp dist/enrich.js examples/browser",
+    "build:node": "webpack && cp dist/enrich.js examples/node/ && node examples/node/example.js",
+    "build": "webpack",
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/txtghana/enrich.git"
+  },
+  "keywords": [
+    "phone",
+    "number",
+    "header",
+    "enrichment",
+    "txtghana"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/txtghana/enrich/issues"
+  },
+  "homepage": "https://github.com/txtghana/enrich#readme",
+  "devDependencies": {
+    "@babel/core": "^7.14.6",
+    "@babel/preset-env": "^7.14.7",
+    "@commitlint/config-conventional": "^12.1.1",
+    "@semantic-release/changelog": "^5.0.1",
+    "@semantic-release/git": "^9.0.0",
+    "@semantic-release/github": "^7.2.1",
+    "@semantic-release/npm": "^7.1.1",
+    "@semantic-release/release-notes-generator": "^9.0.2",
+    "babel-loader": "^8.2.2",
+    "chai": "^4.3.4",
+    "husky": "^6.0.0",
+    "mocha": "^9.0.2",
+    "semantic-release": "^17.4.2",
+    "webpack": "^5.42.0",
+    "webpack-cli": "^4.7.2"
+  }
+}
