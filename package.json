@@ -1,13 +1,14 @@
 {
   "name": "@txtghana/enrich",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "Get user phone number and netwok sent via txtghana header enrichment engine",
   "main": "dist/enrich.js",
   "scripts": {
     "build:browser": "webpack && cp dist/enrich.js examples/browser",
     "build:node": "webpack && cp dist/enrich.js examples/node/ && node examples/node/example.js",
     "build": "webpack",
-    "test": "npm test"
+    "test": "npm test",
+    "semantic-release": "semantic-release"
   },
   "repository": {
     "type": "git",
@@ -43,5 +44,13 @@
     "semantic-release": "^17.4.2",
     "webpack": "^5.42.0",
     "webpack-cli": "^4.7.2"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
