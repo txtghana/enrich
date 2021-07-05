@@ -9,6 +9,8 @@ jobs:
       script: skip
       deploy:
         provider: script
+        on:
+          branch: main
         skip_cleanup: true
         script:
           - npx semantic-release
