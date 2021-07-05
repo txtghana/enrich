@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/txtghana/enrich/compare/v1.0.0...v1.1.0) (2021-07-05)
+
+
+### Features
+
+* delete pre commit hook and using github custom rules ([8c24cd5](https://github.com/txtghana/enrich/commit/8c24cd5bb38145c01b313ac78339159437e97ffc))
+
 # 1.0.0 (2021-07-05)
 
 
