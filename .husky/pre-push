@@ -28,7 +28,7 @@ policy="\n\n[Policy] Never push code directly to the "$protected_branch" branch!
 
 current_branch=$(git symbolic-ref HEAD | sed -e 's,.*/\(.*\),\1,')
 
-push_command=$(ps -ocommand= -p $PPID)
+push_command=$(ps -p $PPID)
 
 is_destructive='force|delete|\-f'
 
