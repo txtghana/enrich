@@ -5,6 +5,7 @@
         ["@semantic-release/changelog", {
             "changelogFile": "docs/CHANGELOG.md",
         }],
+        
         "@semantic-release/npm",
         ["@semantic-release/git", {
             "assets": ["dist/**/*.{js,css}", "docs", "package.json"],
