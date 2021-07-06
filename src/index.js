@@ -1,30 +1,33 @@
-const enrich = {
-    urlParamsRetrived: false,
-    urlParams: null,
+import * as lib from './lib'
+import config from './config'
+import {
+    toCamelCase
+} from './utils'
 
-    getUrlParams: () => {
-        if (enrich.urlParamsRetrived) {
-            return enrich.urlParams
-        }
+const enrich = (function (lib, config) {
+    const publicScope = {
+        init: () => {
+            window.addEventListener('beforeunload', publicScope.sendData)
+        },
 
-        const queryString = window.location.search
-        enrich.urlParams = new URLSearchParams(queryString)
-        enrich.urlParamsRetrived = true
+        sendData: () => {
+            for (const enrichable of config.enrichable) {
+                const canEnrich = 'can' + toCamelCase(enrichable)
 
-        return enrich.urlParams
-    },
+                if (typeof lib[canEnrich] === 'function' && !lib[canEnrich]()) {
+                    continue;
+                }
 
-    msisdn: () => {
-        return enrich.enriched('msisdn')
-    },
+                const fetchData = 'get' + toCamelCase(enrichable)
 
-    network: () => {
-        return enrich.enriched('netwok')
-    },
+                lib[fetchData]()
+            }
+        },
+    }
 
-    enriched: (name) => {
-        return enrich.getUrlParams() ? enrich.getUrlParams().get(name) : 5
-    },
+    return publicScope
+})(lib, config);
+
+module.exports = {
+    enrich
 }
-
-module.exports = { enrich }
