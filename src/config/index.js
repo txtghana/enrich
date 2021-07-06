@@ -5,6 +5,7 @@ export default {
         'location',
         'userDeviceInfo',
         'userActiveTime',
+        'get-fingerprint',
     ],
     sevopixelEnrichReferrer: 'https://sevopixel.com/enrich',
     sevopixelEnrichUrl: 'https://sevopixel.com/enrich',
