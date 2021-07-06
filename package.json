@@ -44,6 +44,7 @@
     "babel-loader": "^8.2.2",
     "chai": "^4.3.4",
     "commitlint": "^12.1.4",
+    "get-browser-fingerprint": "^2.0.1",
     "http-server": "^0.12.3",
     "husky": "^7.0.0",
     "mocha": "^9.0.2",

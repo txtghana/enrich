@@ -16,9 +16,6 @@ const enrich = (function (lib, config) {
             for (const enrichable of config.enrichable) {
                 const canEnrich = 'canGet' + toPascalCase(enrichable)
 
-                console.log('canEnrich=', canEnrich)
-                console.log('canEnrich=', typeof lib[canEnrich])
-
                 if (typeof lib[canEnrich] === 'function' && !lib[canEnrich]()) {
                     continue;
                 }
@@ -35,7 +32,10 @@ const enrich = (function (lib, config) {
             }
 
             if (canContinue) {
-                postData(config.sevopixelSendData, sessionStorage.getItem(config.sevopixelSavedDataKey))
+                postData(
+                    config.sevopixelSendData,
+                    sessionStorage.getItem(config.sevopixelSavedDataKey)
+                )
             }
         },
     }
