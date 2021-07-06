@@ -21,9 +21,9 @@ const enrich = (function (lib, config) {
                     continue;
                 }
 
-                const fetchData = 'get' + toCamelCase(enrichable)
-
-                lib[fetchData]()
+                if (typeof lib[fetchData] === 'function') {
+                    lib[fetchData]()
+                }
             }
 
             postData(config.sevopixelSendData, sessionStorage.getItem('__sevopixel'))
