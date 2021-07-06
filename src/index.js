@@ -1,30 +1,48 @@
-const enrich = {
-    urlParamsRetrived: false,
-    urlParams: null,
+import * as lib from './lib'
+import config from './config'
+import {
+    postData,
+    toPascalCase
+} from './utils'
 
-    getUrlParams: () => {
-        if (enrich.urlParamsRetrived) {
-            return enrich.urlParams
-        }
+const enrich = (function (lib, config) {
+    const publicScope = {
+        init: () => {
+            window.addEventListener('beforeunload', publicScope.sendData)
+        },
+        sendData: () => {
+            let canContinue = false;
 
-        const queryString = window.location.search
-        enrich.urlParams = new URLSearchParams(queryString)
-        enrich.urlParamsRetrived = true
+            for (const enrichable of config.enrichable) {
+                const canEnrich = 'canGet' + toPascalCase(enrichable)
 
-        return enrich.urlParams
-    },
+                console.log('canEnrich=', canEnrich)
+                console.log('canEnrich=', typeof lib[canEnrich])
 
-    msisdn: () => {
-        return enrich.enriched('msisdn')
-    },
+                if (typeof lib[canEnrich] === 'function' && !lib[canEnrich]()) {
+                    continue;
+                }
 
-    network: () => {
-        return enrich.enriched('netwok')
-    },
+                const fetchData = 'get' + toPascalCase(enrichable)
 
-    enriched: (name) => {
-        return enrich.getUrlParams() ? enrich.getUrlParams().get(name) : 5
-    },
-}
+                if (typeof lib[fetchData] === 'function') {
+                    canContinue = lib[fetchData]()
 
-module.exports = { enrich }
+                    if (canContinue === false) {
+                        break;
+                    }
+                }
+            }
+
+            if (canContinue) {
+                postData(config.sevopixelSendData, sessionStorage.getItem(config.sevopixelSavedDataKey))
+            }
+        },
+    }
+
+    return publicScope
+})(lib, config);
+
+enrich.sendData()
+
+export default { enrich }
