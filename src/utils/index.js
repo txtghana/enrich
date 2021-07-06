@@ -24,6 +24,12 @@ export function toCamelCase(word) {
     return word
 }
 
+export function toPascalCase(word) {
+    word = toCamelCase(word)
+
+    return word[0].toUpperCase() + word.substr(1)
+}
+
 export function postData(url, data) {
     window.fetch(url, {
         method: 'POST',

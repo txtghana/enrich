@@ -1,12 +1,17 @@
-import config from "../config";
+import config from "../config"
 
 export function getMobileNumberInfo() {
-    window.location = config.sevopixelEnrichUrl;
+    window.location = config.sevopixelEnrichUrl
+    return false
 }
 
 export function canGetMobileNumberInfo() {
     // return document.referrer !== config.sevopixelEnrichReferrer
-    return enriched('rich') == 1
+    const canGet = enriched('rich') !== '1'
+
+    console.log('canget=', canGet)
+
+    return canGet
 }
 
 let urlParamsRetrieved = false

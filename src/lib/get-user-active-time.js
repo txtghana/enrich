@@ -1,3 +1,5 @@
+import { saveProviderData } from "../utils";
+
 export function getUserActiveTime() {
     saveProviderData('duration', 1)
 }

@@ -2,7 +2,7 @@ import * as lib from './lib'
 import config from './config'
 import {
     postData,
-    toCamelCase
+    toPascalCase
 } from './utils'
 
 const enrich = (function (lib, config) {
@@ -11,25 +11,38 @@ const enrich = (function (lib, config) {
             window.addEventListener('beforeunload', publicScope.sendData)
         },
         sendData: () => {
+            let canContinue = false;
+
             for (const enrichable of config.enrichable) {
-                const canEnrich = 'can' + toCamelCase(enrichable)
+                const canEnrich = 'canGet' + toPascalCase(enrichable)
+
+                console.log('canEnrich=', canEnrich)
+                console.log('canEnrich=', typeof lib[canEnrich])
 
                 if (typeof lib[canEnrich] === 'function' && !lib[canEnrich]()) {
                     continue;
                 }
 
+                const fetchData = 'get' + toPascalCase(enrichable)
+
                 if (typeof lib[fetchData] === 'function') {
-                    lib[fetchData]()
+                    canContinue = lib[fetchData]()
+
+                    if (canContinue === false) {
+                        break;
+                    }
                 }
             }
 
-            postData(config.sevopixelSendData, sessionStorage.getItem(config.sevopixelSavedDataKey))
+            if (canContinue) {
+                postData(config.sevopixelSendData, sessionStorage.getItem(config.sevopixelSavedDataKey))
+            }
         },
     }
 
     return publicScope
 })(lib, config);
 
-module.exports = {
-    enrich
-}
+enrich.sendData()
+
+export default { enrich }

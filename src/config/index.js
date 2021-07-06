@@ -1,6 +1,6 @@
 export default {
     enrichable: [
-        'userMobileNumberInfo',
+        'mobileNumberInfo',
         'pageUrl',
         'location',
         'userDeviceInfo',
