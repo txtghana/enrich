@@ -1,3 +1,15 @@
+# [1.2.0](https://github.com/txtghana/enrich/compare/v1.1.0...v1.2.0) (2021-07-06)
+
+
+### Features
+
+* do not run data not implemented data provider ([931bcf6](https://github.com/txtghana/enrich/commit/931bcf674ef2b7c12dd0345c2098d345166e2a81))
+* refactor how data is gathered ([a91c6fa](https://github.com/txtghana/enrich/commit/a91c6fa49e7215d1a3b31d9d53822f9c8b63dc9d))
+* reorganized application ([91b0d87](https://github.com/txtghana/enrich/commit/91b0d875daa7696bd0ec2e311f3d018eb99e6f80))
+* send data to sevopixel data endpoint ([b43ee50](https://github.com/txtghana/enrich/commit/b43ee5063de26dc272f476679023667af49be1d6))
+* update how to get data and fix errors ([fe665ce](https://github.com/txtghana/enrich/commit/fe665ce9cd8979e7fad4b08851f57acd0d487cd3))
+* update how to know if number has been enriched ([7014a92](https://github.com/txtghana/enrich/commit/7014a92e5c239e457cacf691aba3766128ebc1c0))
+
 # [1.1.0](https://github.com/txtghana/enrich/compare/v1.0.0...v1.1.0) (2021-07-05)
 
 
