@@ -5,32 +5,33 @@ export function getMobileNumberInfo() {
 }
 
 export function canGetMobileNumberInfo() {
-    return document.referrer === config.sevopixelEnrichReferrer
+    // return document.referrer !== config.sevopixelEnrichReferrer
+    return enriched('rich') == 1
 }
 
-let urlParamsRetrived = false
+let urlParamsRetrieved = false
 let urlParams = null
 
 const getUrlParams = () => {
-        if (enrich.urlParamsRetrived) {
-            return enrich.urlParams
-        }
-
-        const queryString = window.location.search
-        enrich.urlParams = new URLSearchParams(queryString)
-        enrich.urlParamsRetrived = true
-
-        return enrich.urlParams
+    if (urlParamsRetrieved) {
+        return urlParams
     }
 
-    const msisdn = () => {
-            return enrich.enriched('msisdn')
-        }
+    const queryString = window.location.search
+    urlParams = new URLSearchParams(queryString)
+    urlParamsRetrieved = true
 
-        const network = () => {
-                return enrich.enriched('netwok')
-            }
+    return urlParams
+}
 
-            const enriched = (name) => {
-                    return enrich.getUrlParams() ? enrich.getUrlParams().get(name) : 5
-                }
+const msisdn = () => {
+    return enriched('msisdn')
+}
+
+const network = () => {
+    return enriched('netwok')
+}
+
+const enriched = (name) => {
+    return getUrlParams() ? getUrlParams().get(name) : null
+}
