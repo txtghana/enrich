@@ -1,6 +1,10 @@
 import * as lib from './lib'
 import config from './config'
 import {
+    catchFetchError,
+    checkFetchStatus,
+    parseFetchJSON,
+    postData,
     toCamelCase
 } from './utils'
 
@@ -9,7 +13,6 @@ const enrich = (function (lib, config) {
         init: () => {
             window.addEventListener('beforeunload', publicScope.sendData)
         },
-
         sendData: () => {
             for (const enrichable of config.enrichable) {
                 const canEnrich = 'can' + toCamelCase(enrichable)
@@ -22,6 +25,8 @@ const enrich = (function (lib, config) {
 
                 lib[fetchData]()
             }
+
+            postData(config.sevopixelSendData, sessionStorage.getItem('__sevopixel'))
         },
     }
 
