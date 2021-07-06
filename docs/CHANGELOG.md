@@ -1,3 +1,11 @@
+# [1.3.0](https://github.com/txtghana/enrich/compare/v1.2.0...v1.3.0) (2021-07-06)
+
+
+### Features
+
+* getting fingerprint ([ed510cf](https://github.com/txtghana/enrich/commit/ed510cf35705f2ee0037dc12f952f4344487514e))
+* next version ([0d94510](https://github.com/txtghana/enrich/commit/0d9451088d54b1aec67d1be785e9cc156a4b094b))
+
 # [1.2.0](https://github.com/txtghana/enrich/compare/v1.1.0...v1.2.0) (2021-07-06)
 
 
