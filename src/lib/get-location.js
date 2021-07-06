@@ -14,13 +14,13 @@ function storeLocation(position) {
     const latitude = !position || position.coords.latitude
     const longitude = !position || position.coords.longitude
 
-    sessionStorage.setItem('sevopixel_declined_location', !position)
-    sessionStorage.setItem('sevopixel_latitude', latitude)
-    sessionStorage.setItem('sevopixel_longitude', longitude)
+    saveProviderData('declined_location', !position)
+    saveProviderData('latitude', latitude)
+    saveProviderData('longitude', longitude)
 }
 
 function error() {
-    sessionStorage.setItem('sevopixel_declined_location', false)
-    sessionStorage.setItem('sevopixel_latitude', null)
-    sessionStorage.setItem('sevopixel_longitude', null)
+    saveProviderData('declined_location', false)
+    saveProviderData('latitude', null)
+    saveProviderData('longitude', null)
 }

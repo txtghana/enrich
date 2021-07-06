@@ -1,5 +1,5 @@
 export function getUserActiveTime() {
-    return 1;
+    saveProviderData('duration', 1)
 }
 
 export function canGetUserActiveTime() {

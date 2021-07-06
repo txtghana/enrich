@@ -1,9 +1,6 @@
 import * as lib from './lib'
 import config from './config'
 import {
-    catchFetchError,
-    checkFetchStatus,
-    parseFetchJSON,
     postData,
     toCamelCase
 } from './utils'
@@ -26,7 +23,7 @@ const enrich = (function (lib, config) {
                 }
             }
 
-            postData(config.sevopixelSendData, sessionStorage.getItem('__sevopixel'))
+            postData(config.sevopixelSendData, sessionStorage.getItem(config.sevopixelSavedDataKey))
         },
     }
 

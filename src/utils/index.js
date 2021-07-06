@@ -1,4 +1,11 @@
 import 'whatwg-fetch'
+import config from '../config'
+
+export function saveProviderData(key, value) {
+    const savedData = JSON.parse(sessionStorage.getItem(config.sevopixelSavedDataKey) || '{}')
+    savedData[key] = value
+    sessionStorage.setItem(config.sevopixelSavedDataKey, JSON.stringify(savedData))
+}
 
 export function toCamelCase(word) {
     word = word.replace(/[^a-z0-9]/ig, '-').trim()
