@@ -1,4 +1,4 @@
-import config from "../config"
+import config from "config"
 
 export function getMobileNumberInfo() {
     window.location = config.sevopixelEnrichUrl
