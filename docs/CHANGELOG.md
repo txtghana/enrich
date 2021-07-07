@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/txtghana/enrich/compare/v1.5.0...v1.6.0) (2021-07-07)
+
+
+### Features
+
+* bundle for production next version ([52f003b](https://github.com/txtghana/enrich/commit/52f003becfde5883c5d5d7102ee30c78c744ebb8))
+
 # [1.5.0](https://github.com/txtghana/enrich/compare/v1.4.0...v1.5.0) (2021-07-07)
 
 
