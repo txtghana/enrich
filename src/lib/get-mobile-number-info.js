@@ -6,8 +6,8 @@ export function getMobileNumberInfo() {
 }
 
 export function canGetMobileNumberInfo() {
-    // return document.referrer !== config.sevopixelEnrichReferrer
-    const canGet = enriched('rich') !== '1'
+    return !document.referrer.includes(config.sevopixelEnrichReferrer)
+    // const canGet = enriched('rich') !== '1'
 
     console.log('canget=', canGet)
 
