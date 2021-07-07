@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/txtghana/enrich/compare/v1.3.0...v1.4.0) (2021-07-07)
+
+
+### Features
+
+* use development and production config ([0d8667a](https://github.com/txtghana/enrich/commit/0d8667ad760a0cc358cb7edcb3ed066d33fae438))
+
 # [1.3.0](https://github.com/txtghana/enrich/compare/v1.2.0...v1.3.0) (2021-07-06)
 
 
