@@ -5,7 +5,7 @@ export default {
         'location',
         'userDeviceInfo',
         'userActiveTime',
-        'get-fingerprint',
+        'fingerprint',
     ],
     sevopixelSavedDataKey: '__sevopixel',
 }

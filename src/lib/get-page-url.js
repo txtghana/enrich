@@ -1,9 +1,9 @@
 import { saveProviderData } from "../utils";
 
-export function getCurrentPageUrl() {
+export function getPageUrl() {
     saveProviderData('visited_url', window.location.href)
 }
 
-export function canGetCurrentPageUrl() {
+export function canGetPageUrl() {
     return true;
 }

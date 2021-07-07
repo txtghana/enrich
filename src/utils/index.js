@@ -59,3 +59,7 @@ export function parseFetchJSON(response) {
 export function catchFetchError(error) {
     console.log('Sevopixel request failed', error)
 }
+
+export function getUserKey() {
+    return
+}
