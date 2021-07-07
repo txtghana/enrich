@@ -1,5 +1,5 @@
 import 'whatwg-fetch'
-import config from '../config'
+import config from "config"
 
 export function saveProviderData(key, value) {
     const savedData = JSON.parse(sessionStorage.getItem(config.sevopixelSavedDataKey) || '{}')
