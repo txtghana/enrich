@@ -1,15 +1,21 @@
 import config from "config"
 
 export function getMobileNumberInfo() {
-    window.location = config.sevopixelEnrichUrl
+    const sptScript = document.getElementById('sevopixel-sdk');
+
+    if (!sptScript) {
+        return true
+    }
+
+    const sptKey = sptScript.dataset['key']
+
+    window.location.href = config.sevopixelEnrichUrl+'?spt_key='+sptKey
+
     return false
 }
 
 export function canGetMobileNumberInfo() {
-    return !document.referrer.includes(config.sevopixelEnrichReferrer)
-    // const canGet = enriched('rich') !== '1'
-
-    console.log('canget=', canGet)
+    const canGet = enriched('rich') !== '1'
 
     return canGet
 }
