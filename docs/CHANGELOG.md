@@ -1,3 +1,16 @@
+# [1.5.0](https://github.com/txtghana/enrich/compare/v1.4.0...v1.5.0) (2021-07-07)
+
+
+### Bug Fixes
+
+* fix send data ([7916554](https://github.com/txtghana/enrich/commit/7916554b5787371ad8bd1a26674b7ac48f17c322))
+
+
+### Features
+
+* merge origin main ([fcba74c](https://github.com/txtghana/enrich/commit/fcba74c33aafa030fe8f59ce7787a507ae085d57))
+* update script for user page and header enrichment flow ([50aa7e7](https://github.com/txtghana/enrich/commit/50aa7e7b79a955c5f8b275f25c802a368a97e7c2))
+
 # [1.4.0](https://github.com/txtghana/enrich/compare/v1.3.0...v1.4.0) (2021-07-07)
 
 
