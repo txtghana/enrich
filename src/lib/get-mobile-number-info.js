@@ -17,7 +17,7 @@ export function getMobileNumberInfo() {
 }
 
 export function canGetMobileNumberInfo() {
-    return enriched('rich') !== '1' || enriched('rich') !== '0'
+    return enriched('rich') !== '1' && enriched('rich') !== '0'
 }
 
 let urlParamsRetrieved = false
