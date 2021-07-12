@@ -1,3 +1,15 @@
+# [1.8.0](https://github.com/txtghana/enrich/compare/v1.7.0...v1.8.0) (2021-07-12)
+
+
+### Bug Fixes
+
+* use var instead of const in script ([84ede6b](https://github.com/txtghana/enrich/commit/84ede6b890abe31c7971c58a53429d55c66c4837))
+
+
+### Features
+
+* use test production ([4e58be0](https://github.com/txtghana/enrich/commit/4e58be021db4f358135847944052121336fc9b70))
+
 # [1.7.0](https://github.com/txtghana/enrich/compare/v1.6.0...v1.7.0) (2021-07-12)
 
 
