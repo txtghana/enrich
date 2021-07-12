@@ -1,2 +1,4 @@
 node_modules
 config/development.js
+examples/browser/enrich.js
+examples/node/enrich.js

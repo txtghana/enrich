@@ -5,11 +5,10 @@
   "main": "dist/enrich.js",
   "scripts": {
     "build:browser": "webpack --mode=production && cp dist/enrich.js examples/browser",
-    "build-dev:browser": "webpack --mode=development && cp dist/enrich.js examples/browser",
     "build:node": "webpack --mode=production && cp dist/enrich.js examples/node/ && node examples/node/example.js",
     "build": "webpack --mode=production",
     "watch": "webpack --mode=development -w",
-    "test:web": "cd ./node_modules/.bin && http-server ../../examples/browser/",
+    "test:web": "webpack --mode=development && cp dist/enrich.js examples/browser && cd ./node_modules/.bin && http-server ../../examples/browser/",
     "test": "npm test",
     "semantic-release": "semantic-release",
     "prepare": "husky install"
