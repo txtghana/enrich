@@ -1,19 +1,16 @@
 {
   "name": "@txtghana/enrich",
-  "version": "1.6.0",
+  "version": "1.7.0",
   "description": "Get user phone number and netwok sent via txtghana header enrichment engine",
   "main": "dist/enrich.js",
   "scripts": {
     "postinstall": "npm-run-all example:* config:publish",
-    
     "example:browser": "cp dist/enrich.js examples/browser/",
     "example:node": "cp dist/enrich.js examples/node/",
     "config:publish": "cp config/production.js config/developmentd.js",
-
     "build": "webpack --mode=production",
     "build:dev": "webpack --mode=development",
     "watch": "webpack --mode=development -w",
-
     "test:web": "npm-run-all build:dev example:browser server:run",
     "server:run": "cd ./node_modules/.bin && http-server ../../examples/browser/",
     "test": "npm test",

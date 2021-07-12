@@ -1,3 +1,17 @@
+# [1.7.0](https://github.com/txtghana/enrich/compare/v1.6.0...v1.7.0) (2021-07-12)
+
+
+### Bug Fixes
+
+* fix canGetMobileInfo condition ([8b612e1](https://github.com/txtghana/enrich/commit/8b612e182e9e66d1b611f975077d74cf2215baeb))
+
+
+### Features
+
+* add fingerprint to sent data on redirection ([a33c113](https://github.com/txtghana/enrich/commit/a33c113bf69fc484ec9b2e581fe1f87958cbd02a))
+* add more data ([2bb0fe5](https://github.com/txtghana/enrich/commit/2bb0fe51af8cfe63c914f7d37e9001505230fe2a))
+* remove test web bundle from ([5cd4c32](https://github.com/txtghana/enrich/commit/5cd4c32e1f1bb5feb80f010082a2571f2314dbd6))
+
 # [1.6.0](https://github.com/txtghana/enrich/compare/v1.5.0...v1.6.0) (2021-07-07)
 
 
