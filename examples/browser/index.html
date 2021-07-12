@@ -168,13 +168,13 @@
 
   <script>
     (function (d, s, id, k) {
-      var js, fjs = d.getElementsByTagName(s)[0];
+      const js, tjs = d.getElementsByTagName(s)[0];
       if (d.getElementById(id)) { return; }
       js = d.createElement(s);
       js.id = id;
       js.dataset.key = k;
       js.src = './enrich.js';
-      fjs.parentNode.insertBefore(js, fjs);
+      tjs.parentNode.insertBefore(js, tjs);
     } (document, 'script', 'sevopixel-sdk', 'REJO545553'));
   </script>
 
