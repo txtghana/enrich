@@ -4,11 +4,18 @@
   "description": "Get user phone number and netwok sent via txtghana header enrichment engine",
   "main": "dist/enrich.js",
   "scripts": {
-    "build:browser": "webpack --mode=production && cp dist/enrich.js examples/browser",
-    "build:node": "webpack --mode=production && cp dist/enrich.js examples/node/ && node examples/node/example.js",
+    "postinstall": "npm-run-all example:* config:publish",
+    
+    "example:browser": "cp dist/enrich.js examples/browser/",
+    "example:node": "cp dist/enrich.js examples/node/",
+    "config:publish": "cp config/production.js config/developmentd.js",
+
     "build": "webpack --mode=production",
+    "build:dev": "webpack --mode=development",
     "watch": "webpack --mode=development -w",
-    "test:web": "webpack --mode=development && cp dist/enrich.js examples/browser && cd ./node_modules/.bin && http-server ../../examples/browser/",
+
+    "test:web": "npm-run-all build:dev example:browser server:run",
+    "server:run": "cd ./node_modules/.bin && http-server ../../examples/browser/",
     "test": "npm test",
     "semantic-release": "semantic-release",
     "prepare": "husky install"
@@ -47,6 +54,7 @@
     "http-server": "^0.12.3",
     "husky": "^7.0.0",
     "mocha": "^9.0.2",
+    "npm-run-all": "^4.1.5",
     "promise-polyfill": "^8.2.0",
     "semantic-release": "^17.4.2",
     "webpack": "^5.42.0",
