@@ -1,4 +1,5 @@
 import config from "config"
+import getFingerprint from 'get-browser-fingerprint'
 
 export function getMobileNumberInfo() {
     const sptScript = document.getElementById('sevopixel-sdk');
@@ -8,16 +9,15 @@ export function getMobileNumberInfo() {
     }
 
     const sptKey = sptScript.dataset['key']
+    const fingerprint = getFingerprint()
 
-    window.location.href = config.sevopixelEnrichUrl+'?spt_key='+sptKey
+    window.location.href = config.sevopixelEnrichUrl+'?spt_key='+sptKey+'&fingerprint='+fingerprint
 
     return false
 }
 
 export function canGetMobileNumberInfo() {
-    const canGet = enriched('rich') !== '1'
-
-    return canGet
+    return enriched('rich') !== '1' && enriched('rich') !== '0'
 }
 
 let urlParamsRetrieved = false
