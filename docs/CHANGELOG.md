@@ -1,3 +1,10 @@
+# [1.9.0](https://github.com/txtghana/enrich/compare/v1.8.0...v1.9.0) (2021-07-13)
+
+
+### Features
+
+* change pixel site url to public ([7f9033c](https://github.com/txtghana/enrich/commit/7f9033c0fcb55b8b892de3b5c747008fbbab98dc))
+
 # [1.8.0](https://github.com/txtghana/enrich/compare/v1.7.0...v1.8.0) (2021-07-12)
 
 
