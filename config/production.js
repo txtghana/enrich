@@ -2,7 +2,7 @@ import * as common from "./common"
 
 export default {
     ...common.default,
-    sevopixelEnrichReferrer: 'http://173.16.0.25:85/api/enrich',
-    sevopixelEnrichUrl: 'http://173.16.0.25:85/api/enrich',
-    sevopixelSendData: 'http://173.16.0.25:85/api/updater',
+    sevopixelEnrichReferrer: 'http://41.207.253.166:85/api/enrich',
+    sevopixelEnrichUrl: 'http://41.207.253.166:85/api/enrich',
+    sevopixelSendData: 'http://41.207.253.166:85/api/updater',
 }
