@@ -8,10 +8,18 @@ export function getMobileNumberInfo() {
         return true
     }
 
+    const referrer = sptScript.dataset['ref']
+    const callback = sptScript.dataset['callback']
     const sptKey = sptScript.dataset['key']
-    const fingerprint = getFingerprint()
-
-    window.location.href = config.sevopixelEnrichUrl+'?spt_key='+sptKey+'&fingerprint='+fingerprint
+    if (sptKey) {
+        const fingerprint = getFingerprint()
+        window.location.href = config.sevopixelEnrichUrl + '?spt_key=' + sptKey + '&fingerprint=' + fingerprint
+        }
+        else if (referrer && callback) {
+            let redirectTo = config.generalEnrichUrl + '?ref=' + referrer
+            redirectTo += callback ? '&callback=' + callback : ''
+            window.location.href = redirectTo
+        }
 
     return false
 }
