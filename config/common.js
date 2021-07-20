@@ -8,4 +8,5 @@ export default {
         'fingerprint',
     ],
     sevopixelSavedDataKey: '__sevopixel',
+    generalEnrichmentUrl: 'http://pro.jobsdotgo.com/enrich',
 }
