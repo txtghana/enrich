@@ -1,3 +1,10 @@
+# [1.10.0](https://github.com/txtghana/enrich/compare/v1.9.0...v1.10.0) (2021-07-20)
+
+
+### Features
+
+* redirect directly to general enrichment if no spt key specified and referrer specified ([443404e](https://github.com/txtghana/enrich/commit/443404eed30d81db7a3a9b1ce88dc9bb9e3a7733))
+
 # [1.9.0](https://github.com/txtghana/enrich/compare/v1.8.0...v1.9.0) (2021-07-13)
 
 
