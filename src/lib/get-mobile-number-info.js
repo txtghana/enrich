@@ -16,15 +16,20 @@ export function getMobileNumberInfo() {
     const referrer = sptScript.dataset['ref']
     const callback = sptScript.dataset['callback']
     const sptKey = sptScript.dataset['key']
+    if (referrer || callback || sptKey) {
+        saveProviderData(lastEnrichKey, Date.now())
+    }
+
     if (sptKey) {
         const fingerprint = getFingerprint()
-        saveProviderData(lastEnrichKey, Date.now())
         window.location.href = config.sevopixelEnrichUrl + '?spt_key=' + sptKey + '&fingerprint=' + fingerprint
         }
         else if (referrer && callback) {
             let redirectTo = `${config.generalEnrichmentUrl}?ref=${referrer}`
-            redirectTo += callback ? `&callback=${callback}` : ''
-            saveProviderData(lastEnrichKey, Date.now())
+            if (callback) {
+                redirectTo += `&callback=${callback}`
+            }
+
             window.location.href = redirectTo
         }
 
