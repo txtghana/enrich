@@ -9,4 +9,5 @@ export default {
     ],
     sevopixelSavedDataKey: '__sevopixel',
     generalEnrichmentUrl: 'http://pro.jobsdotgo.com/enrich',
+    enrichTimeout: 1000 * 60 * 2,
 }

@@ -1,5 +1,10 @@
 import config from "config"
 import getFingerprint from 'get-browser-fingerprint'
+import {
+    getUrl,
+    getProviderData,
+    saveProviderData
+} from "../utils";
 
 export function getMobileNumberInfo() {
     const sptScript = document.getElementById('sevopixel-sdk');
@@ -13,11 +18,13 @@ export function getMobileNumberInfo() {
     const sptKey = sptScript.dataset['key']
     if (sptKey) {
         const fingerprint = getFingerprint()
+        saveProviderData(lastEnrichKey, Date.now())
         window.location.href = config.sevopixelEnrichUrl + '?spt_key=' + sptKey + '&fingerprint=' + fingerprint
         }
         else if (referrer && callback) {
-            let redirectTo = config.generalEnrichUrl + '?ref=' + referrer
-            redirectTo += callback ? '&callback=' + callback : ''
+            let redirectTo = `${config.generalEnrichUrl}?ref=${referrer}`
+            redirectTo += callback ? `&callback=${callback}` : ''
+            saveProviderData(lastEnrichKey, Date.now())
             window.location.href = redirectTo
         }
 
@@ -25,7 +32,11 @@ export function getMobileNumberInfo() {
 }
 
 export function canGetMobileNumberInfo() {
-    return enriched('rich') !== '1' && enriched('rich') !== '0'
+    const lastEnrichKey = 'lastEnrich_' + getUrl()
+    const lastEnrich = getProviderData(lastEnrichKey) || 0
+    const elapsedTime = new Date() - lastEnrich
+
+    return elapsedTime < config.enrichTimeout
 }
 
 let urlParamsRetrieved = false

@@ -7,6 +7,19 @@ export function saveProviderData(key, value) {
     sessionStorage.setItem(config.sevopixelSavedDataKey, JSON.stringify(savedData))
 }
 
+export function getProviderData(key) {
+    const savedData = JSON.parse(sessionStorage.getItem(config.sevopixelSavedDataKey) || '{}')
+    return savedData[key]
+}
+
+export function getUrl() {
+    return `${location.protocol}//${location.host}${location.pathname}`
+}
+
+export function getFullUrl() {
+    return location.href
+}
+
 export function toCamelCase(word) {
     word = word.replace(/[^a-z0-9]/ig, '-').trim()
 
