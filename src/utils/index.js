@@ -1,6 +1,22 @@
 import 'whatwg-fetch'
 import config from "config"
 
+export function isSevopixel() {
+    const sdk = getSdk();
+
+    return sdk && sdk.dataset['key']
+}
+
+export function getSdk(key) {
+    const script = document.getElementById('sevopixel-sdk')
+
+    if (script) {
+        return script.dataset(key)
+    }
+
+    return script
+}
+
 export function saveProviderData(key, value) {
     const savedData = JSON.parse(sessionStorage.getItem(config.sevopixelSavedDataKey) || '{}')
     savedData[key] = value
@@ -14,6 +30,10 @@ export function getProviderData(key) {
 
 export function getUrl() {
     return `${location.protocol}//${location.host}${location.pathname}`
+}
+
+export function getDomainName() {
+    return (new URL(window.location.href)).hostname
 }
 
 export function getFullUrl() {
