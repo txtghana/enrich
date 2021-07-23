@@ -22,7 +22,7 @@ export function getMobileNumberInfo() {
         window.location.href = config.sevopixelEnrichUrl + '?spt_key=' + sptKey + '&fingerprint=' + fingerprint
         }
         else if (referrer && callback) {
-            let redirectTo = `${config.generalEnrichUrl}?ref=${referrer}`
+            let redirectTo = `${config.generalEnrichmentUrl}?ref=${referrer}`
             redirectTo += callback ? `&callback=${callback}` : ''
             saveProviderData(lastEnrichKey, Date.now())
             window.location.href = redirectTo
