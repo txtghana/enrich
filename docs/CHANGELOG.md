@@ -1,3 +1,18 @@
+# [1.11.0](https://github.com/txtghana/enrich/compare/v1.10.0...v1.11.0) (2021-07-23)
+
+
+### Bug Fixes
+
+* fix defaultElapsedTime declared twice ([08b7be1](https://github.com/txtghana/enrich/commit/08b7be1f2e4c1b83c014263dddad888583e5a0a0))
+* fix general enrichmenturl ([bb01093](https://github.com/txtghana/enrich/commit/bb010937ead88414fdef5800c2a5b3b55d2c08b7))
+
+
+### Features
+
+* do not enrich if last enrich less than 2 minutes ([b764612](https://github.com/txtghana/enrich/commit/b7646121898644b823ad69d061f33eda51e474d5))
+* increase general enrichment timeout to 30 days ([4dae8ba](https://github.com/txtghana/enrich/commit/4dae8bad1492c5e785462925d68d78172caf24dc))
+* use domain name as url to save enrichment time, if not sevopixel ([4b1427c](https://github.com/txtghana/enrich/commit/4b1427c221c550d305e9b5363b3c108cb2e62363))
+
 # [1.10.0](https://github.com/txtghana/enrich/compare/v1.9.0...v1.10.0) (2021-07-20)
 
 
