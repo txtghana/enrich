@@ -172,10 +172,11 @@
       if (d.getElementById(id)) { return; }
       js = d.createElement(s);
       js.id = id;
-      js.dataset.key = k;
-      js.src = './enrich.js';
+      js.dataset.callback = 'https://callback-to-post-enrichment.to';
+      js.dataset.ref = 'https://page-to-redirect.to';
+      js.src = 'https://cdn.jsdelivr.net/npm/@txtghana/enrich/dist/enrich.min.js';
       tjs.parentNode.insertBefore(js, tjs);
-    } (document, 'script', 'sevopixel-sdk', 'REJO545553'));
+    } (document, 'script', 'sevopixel-sdk', null));
   </script>
 
 </body>
