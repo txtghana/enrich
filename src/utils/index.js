@@ -11,7 +11,7 @@ export function getSdk(key) {
     const script = document.getElementById('sevopixel-sdk')
 
     if (script) {
-        return script.dataset(key)
+        return script.dataset[key]
     }
 
     return script
