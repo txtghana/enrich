@@ -172,9 +172,9 @@
       if (d.getElementById(id)) { return; }
       js = d.createElement(s);
       js.id = id;
-      js.dataset.callback = 'https://callback-to-post-enrichment.to';
-      js.dataset.ref = 'https://page-to-redirect.to';
-      js.src = 'https://cdn.jsdelivr.net/npm/@txtghana/enrich/dist/enrich.min.js';
+      js.dataset.callback = 'https://webhook.site/231dec3d-e6e0-478e-a744-63c1d46ff92a';
+      js.dataset.ref = 'https://google.com';
+      js.src = './enrich.js';
       tjs.parentNode.insertBefore(js, tjs);
     } (document, 'script', 'sevopixel-sdk', null));
   </script>

@@ -40,12 +40,12 @@ export function getMobileNumberInfo() {
 }
 
 export function canGetMobileNumberInfo() {
-    const isSevopixel = isSevopixel()
-    const url = isSevopixel ? getUrl() : getDomainName()
+    const isSevopixelApp = isSevopixel()
+    const url = isSevopixelApp ? getUrl() : getDomainName()
     const lastEnrichKey = 'lastEnrich_' + url
     const lastEnrich = getProviderData(lastEnrichKey) || 0
     const elapsedTime = new Date() - lastEnrich
-    const defaultElapsedTime = isSevopixel ? config.sevopixelEnrichTimeout : config.enrichTimeout
+    const defaultElapsedTime = isSevopixelApp ? config.sevopixelEnrichTimeout : config.enrichTimeout
 
     return elapsedTime < defaultElapsedTime
 }
