@@ -10,11 +10,17 @@ export function isSevopixel() {
 export function getSdk(key) {
     const script = document.getElementById('sevopixel-sdk')
 
-    if (script) {
+    if (key) {
         return script.dataset[key]
     }
 
     return script
+}
+
+export function getLastEnrichKey() {
+    const url = isSevopixel() ? getUrl() : getDomainName()
+
+    return 'lastEnrich_' + url
 }
 
 export function saveProviderData(key, value) {

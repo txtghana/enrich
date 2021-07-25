@@ -1,12 +1,11 @@
 import config from "config"
 import getFingerprint from 'get-browser-fingerprint'
 import {
-    getUrl,
+    getLastEnrichKey,
     getProviderData,
     saveProviderData,
     getSdk,
     isSevopixel,
-    getDomainName
 } from "../utils";
 
 export function getMobileNumberInfo() {
@@ -19,6 +18,8 @@ export function getMobileNumberInfo() {
     const referrer = sdk.dataset['ref']
     const callback = sdk.dataset['callback']
     const sptKey = sdk.dataset['key']
+    const lastEnrichKey = getLastEnrichKey()
+
     if (referrer || callback || sptKey) {
         saveProviderData(lastEnrichKey, Date.now())
     }
@@ -40,12 +41,10 @@ export function getMobileNumberInfo() {
 }
 
 export function canGetMobileNumberInfo() {
-    const isSevopixelApp = isSevopixel()
-    const url = isSevopixelApp ? getUrl() : getDomainName()
-    const lastEnrichKey = 'lastEnrich_' + url
+    const lastEnrichKey = getLastEnrichKey()
     const lastEnrich = getProviderData(lastEnrichKey) || 0
     const elapsedTime = new Date() - lastEnrich
-    const defaultElapsedTime = isSevopixelApp ? config.sevopixelEnrichTimeout : config.enrichTimeout
+    const defaultElapsedTime = isSevopixel() ? config.sevopixelEnrichTimeout : config.enrichTimeout
 
     return elapsedTime > defaultElapsedTime
 }
