@@ -1,3 +1,13 @@
+## [1.11.1](https://github.com/txtghana/enrich/compare/v1.11.0...v1.11.1) (2021-07-25)
+
+
+### Bug Fixes
+
+* enrich if elapsed time greater than defaultElapsedTime ([8abb2c4](https://github.com/txtghana/enrich/commit/8abb2c4f88695fc223f378dc2c4675a374a3588e))
+* fix dataset used as a function ([40c0418](https://github.com/txtghana/enrich/commit/40c0418702afb83eba0924d7b2a4eef93d6d9651))
+* fix isSevopixel util funciton not resolving in get mobile info file ([1c27a91](https://github.com/txtghana/enrich/commit/1c27a9162d256919ea0ceeaf4d7407dbdf3be464))
+* fix normal header enrichment processing ([f82c29d](https://github.com/txtghana/enrich/commit/f82c29d071c63be720c6ebe5a9b1a2ca19889a0a))
+
 # [1.11.0](https://github.com/txtghana/enrich/compare/v1.10.0...v1.11.0) (2021-07-23)
 
 
