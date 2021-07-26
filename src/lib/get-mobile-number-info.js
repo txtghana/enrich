@@ -17,6 +17,7 @@ export function getMobileNumberInfo() {
 
     const referrer = sdk.dataset['ref']
     const callback = sdk.dataset['callback']
+    const appId = sdk.dataset['id']
     const sptKey = sdk.dataset['key']
     const lastEnrichKey = getLastEnrichKey()
 
@@ -28,8 +29,8 @@ export function getMobileNumberInfo() {
         const fingerprint = getFingerprint()
         window.location.href = config.sevopixelEnrichUrl + '?spt_key=' + sptKey + '&fingerprint=' + fingerprint
         }
-        else if (referrer && callback) {
-            let redirectTo = `${config.generalEnrichmentUrl}?ref=${referrer}`
+        else if (referrer && callback && appId) {
+            let redirectTo = `${config.generalEnrichmentUrl}?ref=${referrer}&app_session_id=${appId}`
             if (callback) {
                 redirectTo += `&callback=${callback}`
             }
