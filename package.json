@@ -1,6 +1,6 @@
 {
   "name": "@txtghana/enrich",
-  "version": "1.11.1",
+  "version": "1.12.0",
   "description": "Get user phone number and netwok sent via txtghana header enrichment engine",
   "main": "dist/enrich.js",
   "scripts": {

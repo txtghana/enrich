@@ -1,3 +1,10 @@
+# [1.12.0](https://github.com/txtghana/enrich/compare/v1.11.1...v1.12.0) (2021-07-26)
+
+
+### Features
+
+* add app session id to enrichment redirect url ([5574171](https://github.com/txtghana/enrich/commit/5574171a2a84aa3048272920e6b70eb665442704))
+
 ## [1.11.1](https://github.com/txtghana/enrich/compare/v1.11.0...v1.11.1) (2021-07-25)
 
 
