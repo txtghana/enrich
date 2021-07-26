@@ -25,4 +25,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Purge package
-      - run: curl purge.jsdelivr.net/npm/@txtghana/enrich@latest/dist/enrich.min.js
+        run: curl purge.jsdelivr.net/npm/@txtghana/enrich@latest/dist/enrich.min.js
