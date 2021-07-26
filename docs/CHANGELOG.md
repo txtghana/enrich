@@ -1,3 +1,10 @@
+# [1.13.0](https://github.com/txtghana/enrich/compare/v1.12.0...v1.13.0) (2021-07-26)
+
+
+### Features
+
+* purge package cache on release ([8237b23](https://github.com/txtghana/enrich/commit/8237b23d8d042052720c84282f04cf4c4a955f0f))
+
 # [1.12.0](https://github.com/txtghana/enrich/compare/v1.11.1...v1.12.0) (2021-07-26)
 
 
