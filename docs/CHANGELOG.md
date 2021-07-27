@@ -1,3 +1,10 @@
+# [1.17.0](https://github.com/txtghana/enrich/compare/v1.16.0...v1.17.0) (2021-07-27)
+
+
+### Features
+
+* update purge url ([5a95396](https://github.com/txtghana/enrich/commit/5a95396c01e9ed7ee1e7e3a314d55bd9f0e7ee25))
+
 # [1.16.0](https://github.com/txtghana/enrich/compare/v1.15.0...v1.16.0) (2021-07-27)
 
 
