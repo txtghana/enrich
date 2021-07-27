@@ -29,13 +29,21 @@ export function getMobileNumberInfo() {
         const fingerprint = getFingerprint()
         window.location.href = config.sevopixelEnrichUrl + '?spt_key=' + sptKey + '&fingerprint=' + fingerprint
         }
-        else if (referrer && callback && appId) {
-            let redirectTo = `${config.generalEnrichmentUrl}?ref=${referrer}&app_session_id=${appId}`
-            if (callback) {
-                redirectTo += `&callback=${callback}`
+        else if (referrer || callback || appId) {
+            let searchParams = []
+            if (appId) {
+                searchParams.push('app_session_id=' + appId)
             }
+            if (referrer) {
+                searchParams.push('ref=' + referrer)
+            }
+            if (callback) {
+                searchParams.push('callback=' + callback)
+                }
 
-            window.location.href = redirectTo
+                const searchString = searchParams.join('&')
+
+                window.location.href = config.generalEnrichmentUrl + '?' + searchString
         }
 
     return false
