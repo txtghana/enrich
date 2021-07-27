@@ -61,6 +61,7 @@ export function canGetMobileNumberInfo() {
     const lastEnrichKey = getLastEnrichKey()
     const lastEnrich = getProviderData(lastEnrichKey) || 0
     const elapsedTime = new Date() - lastEnrich
+    const sdk = getSdk();
     const env = sdk.dataset['test'] === 'true' ? 'test' : 'production'
     const defaultElapsedTime = isSevopixel() ? config.timeout[env].sevopixelEnrich : config.timeout[env].enrich
 
