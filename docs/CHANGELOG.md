@@ -1,3 +1,13 @@
+# [1.16.0](https://github.com/txtghana/enrich/compare/v1.15.0...v1.16.0) (2021-07-27)
+
+
+### Features
+
+* add encoded query string to specify that the referrer and callback have been encoded ([4b82050](https://github.com/txtghana/enrich/commit/4b82050e74aa54b11eb2f3c9b219c03d75b4467f))
+* add subscription - unsubscription to package ([59ee658](https://github.com/txtghana/enrich/commit/59ee6580f6f38e88a72b41689ab0f829f8eaa68b))
+* add subscription - unsubscription to package ([b3964b8](https://github.com/txtghana/enrich/commit/b3964b8b961331e4b58bbc257bd5d7a5252dcf05))
+* reduce timeout on local ([2ff269f](https://github.com/txtghana/enrich/commit/2ff269f740070b61ed0a23673380fba0f8495a05))
+
 # [1.15.0](https://github.com/txtghana/enrich/compare/v1.14.0...v1.15.0) (2021-07-27)
 
 
