@@ -26,4 +26,4 @@ jobs:
     needs: release
     steps:
       - name: Purge package
-        run: curl purge.jsdelivr.net/npm/@txtghana/enrich@latest/dist/enrich.min.js
+        run: curl https://purge.jsdelivr.net/npm/@txtghana/enrich@latest/dist/enrich.min.js
