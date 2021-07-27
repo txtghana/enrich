@@ -34,7 +34,7 @@ export function getMobileNumberInfo() {
         let searchParams = []
 
         if (requestType === 'enrich') {
-            searchParams.push('app_session_id=' + appId)
+            searchParams.push('app_token=' + appId)
             if (referrer) {
                 searchParams.push('ref=' + encodeURIComponent(referrer))
             }
