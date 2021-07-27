@@ -35,10 +35,10 @@ export function getMobileNumberInfo() {
                 searchParams.push('app_session_id=' + appId)
             }
             if (referrer) {
-                searchParams.push('ref=' + referrer)
+                searchParams.push('ref=' + encodeURIComponent(referrer))
             }
             if (callback) {
-                searchParams.push('callback=' + callback)
+                searchParams.push('callback=' + encodeURIComponent(callback))
                 }
 
                 const searchString = searchParams.join('&')
