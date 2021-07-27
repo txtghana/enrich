@@ -1,3 +1,10 @@
+# [1.15.0](https://github.com/txtghana/enrich/compare/v1.14.0...v1.15.0) (2021-07-27)
+
+
+### Features
+
+* encode referrer and callback url ([7731fa1](https://github.com/txtghana/enrich/commit/7731fa152aadf6fc930df4f3848e4695961c7f5b))
+
 # [1.14.0](https://github.com/txtghana/enrich/compare/v1.13.0...v1.14.0) (2021-07-27)
 
 
