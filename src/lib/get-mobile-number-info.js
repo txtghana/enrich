@@ -28,22 +28,24 @@ export function getMobileNumberInfo() {
     if (sptKey) {
         const fingerprint = getFingerprint()
         window.location.href = config.sevopixelEnrichUrl + '?spt_key=' + sptKey + '&fingerprint=' + fingerprint
+    } else if (referrer || callback || appId) {
+        let searchParams = []
+
+        if (appId) {
+            searchParams.push('app_session_id=' + appId)
         }
-        else if (referrer || callback || appId) {
-            let searchParams = []
-            if (appId) {
-                searchParams.push('app_session_id=' + appId)
-            }
-            if (referrer) {
-                searchParams.push('ref=' + encodeURIComponent(referrer))
-            }
-            if (callback) {
-                searchParams.push('callback=' + encodeURIComponent(callback))
-                }
 
-                const searchString = searchParams.join('&')
+        if (referrer) {
+            searchParams.push('ref=' + encodeURIComponent(referrer))
+        }
 
-                window.location.href = config.generalEnrichmentUrl + '?' + searchString
+        if (callback) {
+            searchParams.push('callback=' + encodeURIComponent(callback))
+        }
+
+        const searchString = searchParams.join('&')
+
+        window.location.href = config.generalEnrichmentUrl + '?encoded=1&' + searchString
         }
 
     return false
