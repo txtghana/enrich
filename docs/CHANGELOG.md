@@ -1,3 +1,10 @@
+# [1.14.0](https://github.com/txtghana/enrich/compare/v1.13.0...v1.14.0) (2021-07-27)
+
+
+### Features
+
+* make callback, referrer, app session id optional ([1d09c14](https://github.com/txtghana/enrich/commit/1d09c14ae5e176d7a81701a9f77b57d05c49f503))
+
 # [1.13.0](https://github.com/txtghana/enrich/compare/v1.12.0...v1.13.0) (2021-07-26)
 
 
