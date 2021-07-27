@@ -18,6 +18,7 @@ export function getMobileNumberInfo() {
     const referrer = sdk.dataset['ref']
     const callback = sdk.dataset['callback']
     const appId = sdk.dataset['id']
+    const requestType = sdk.dataset['type'] || 'enrich'
     const sptKey = sdk.dataset['key']
     const lastEnrichKey = getLastEnrichKey()
 
@@ -28,22 +29,29 @@ export function getMobileNumberInfo() {
     if (sptKey) {
         const fingerprint = getFingerprint()
         window.location.href = config.sevopixelEnrichUrl + '?spt_key=' + sptKey + '&fingerprint=' + fingerprint
-        }
-        else if (referrer || callback || appId) {
-            let searchParams = []
-            if (appId) {
-                searchParams.push('app_session_id=' + appId)
-            }
+    } else if (appId) {
+        let redirectTo = config.generalEnrichmentUrl[requestType]
+        let searchParams = []
+
+        if (requestType === 'enrich') {
+            searchParams.push('app_session_id=' + appId)
             if (referrer) {
                 searchParams.push('ref=' + encodeURIComponent(referrer))
             }
-            if (callback) {
-                searchParams.push('callback=' + encodeURIComponent(callback))
+        } else {
+            redirectTo = redirectTo.replace('{source_session_id}', appId)
+
+            if (referrer) {
+                searchParams.push('redirect_to_url=' + encodeURIComponent(referrer))
                 }
+        }
 
-                const searchString = searchParams.join('&')
+        if (callback) {
+            searchParams.push('callback=' + encodeURIComponent(callback))
+        }
 
-                window.location.href = config.generalEnrichmentUrl + '?' + searchString
+        const searchString = searchParams.join('&')
+        window.location.href = redirectTo + '&' + searchString
         }
 
     return false
@@ -53,7 +61,9 @@ export function canGetMobileNumberInfo() {
     const lastEnrichKey = getLastEnrichKey()
     const lastEnrich = getProviderData(lastEnrichKey) || 0
     const elapsedTime = new Date() - lastEnrich
-    const defaultElapsedTime = isSevopixel() ? config.sevopixelEnrichTimeout : config.enrichTimeout
+    const sdk = getSdk();
+    const env = sdk.dataset['test'] === 'true' ? 'test' : 'production'
+    const defaultElapsedTime = isSevopixel() ? config.timeout[env].sevopixelEnrich : config.timeout[env].enrich
 
     return elapsedTime > defaultElapsedTime
 }
