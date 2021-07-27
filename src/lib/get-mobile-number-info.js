@@ -18,6 +18,7 @@ export function getMobileNumberInfo() {
     const referrer = sdk.dataset['ref']
     const callback = sdk.dataset['callback']
     const appId = sdk.dataset['id']
+    const requestType = sdk.dataset['type'] || 'enrich'
     const sptKey = sdk.dataset['key']
     const lastEnrichKey = getLastEnrichKey()
 
@@ -28,15 +29,21 @@ export function getMobileNumberInfo() {
     if (sptKey) {
         const fingerprint = getFingerprint()
         window.location.href = config.sevopixelEnrichUrl + '?spt_key=' + sptKey + '&fingerprint=' + fingerprint
-    } else if (referrer || callback || appId) {
+    } else if (appId) {
+        let redirectTo = config.generalEnrichmentUrl[requestType]
         let searchParams = []
 
-        if (appId) {
+        if (requestType === 'enrich') {
             searchParams.push('app_session_id=' + appId)
-        }
+            if (referrer) {
+                searchParams.push('ref=' + encodeURIComponent(referrer))
+            }
+        } else {
+            redirectTo = redirectTo.replace('{source_session_id}', appId)
 
-        if (referrer) {
-            searchParams.push('ref=' + encodeURIComponent(referrer))
+            if (referrer) {
+                searchParams.push('redirect_to_url=' + encodeURIComponent(referrer))
+                }
         }
 
         if (callback) {
@@ -44,8 +51,7 @@ export function getMobileNumberInfo() {
         }
 
         const searchString = searchParams.join('&')
-
-        window.location.href = config.generalEnrichmentUrl + '?encoded=1&' + searchString
+        window.location.href = redirectTo + '&' + searchString
         }
 
     return false
