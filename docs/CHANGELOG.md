@@ -1,3 +1,10 @@
+# [1.19.0](https://github.com/txtghana/enrich/compare/v1.18.0...v1.19.0) (2021-07-27)
+
+
+### Features
+
+* build for prod ([de4f2fb](https://github.com/txtghana/enrich/commit/de4f2fb7e52eb6a6b6991aa447ea66369f806a27))
+
 # [1.17.0](https://github.com/txtghana/enrich/compare/v1.16.0...v1.17.0) (2021-07-27)
 
 
